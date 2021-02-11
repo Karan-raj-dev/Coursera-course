@@ -13,8 +13,7 @@ h1{
     background-color: lightgray;
     border: 2px solid black;
     padding: 0px 10px;
-    margin: 5px 0px;
-    border-radius: 24px;
+    margin: 5px 50px;
 }
 .box h3{
     margin: 0px 0px;
@@ -26,7 +25,6 @@ h1{
     border-right: 0px;
     position: relative;
     right: -10px;
-    border-top-right-radius: 24px;
 }
 .chicken{
     background-color: lightcoral;
@@ -44,7 +42,7 @@ h1{
 @media(min-width: 992px){
     .col-lg-4{
         float: left;
-        margin: 2px 0px;
+        margin: 2px 2px;
         width: 33%;
         box-sizing: border-box;
     }
@@ -52,11 +50,11 @@ h1{
 @media(max-width: 991px) and (min-width: 768px){
     .col-md-6, .col-md-12{
         float: left;
-        margin: 2px 0px;
+        margin: 2px 2px;
         box-sizing: border-box;
     }
     .col-md-6{
-        width: 50%;
+        width: 49.5%;
     }
     .col-md-12{
         width: 100%;
