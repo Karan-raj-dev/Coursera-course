@@ -1,0 +1,42 @@
+h1{
+    text-align: center;
+    margin: 20px 0px;
+}
+.box{
+    background-color: lightgray;
+    padding: 5%;
+    margin-bottom: 5%;
+}
+.box > h3{
+    text-align: center;
+}
+.box > p{
+    text-align: justify;
+}
+.navbar-brand{
+    font-size: 35px;
+    margin-left: 2%;
+}
+.navbar{
+    background-color: lightgray;
+}
+.navbar a{
+    color: black;
+}
+.navbar i{
+    border: 1px solid black;
+    padding: 0px 5px;
+    font-weight: bold;
+}
+.navbar i:hover, .navbar i:active{
+    color: white;
+    border-color: white;
+}
+.navbar-toggler{
+    font-size: 30px;
+}
+@media(min-width: 768px) {
+    .nav-link{
+        display: none;
+    }            
+}
