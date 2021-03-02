@@ -19,6 +19,7 @@ h1{
 }
 .navbar{
     background-color: lightgray;
+    border: 1px solid black;
 }
 .navbar a{
     color: black;
@@ -34,6 +35,10 @@ h1{
 }
 .navbar-toggler{
     font-size: 30px;
+}
+.nav-item{
+    text-align: center;
+    border-top: 1px solid black;
 }
 @media(min-width: 768px) {
     .nav-link{
