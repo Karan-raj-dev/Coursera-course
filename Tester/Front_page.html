@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Form | Enter your Details</title>
+    <style>
+        body{
+            background-color:rgb(166, 223, 250);
+        }
+        .star{
+            color: red;
+        }
+        #header{
+            background-image: url("https://image.shutterstock.com/image-illustration/blue-abstract-background-blur-260nw-1205808907.jpg");
+            padding: 2%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+        }
+        #header div{
+            margin: 0% 5%;
+            background-color: rgba(255,255,255,0.5);
+            border: 2px solid black;
+        }
+        #header h1{
+            text-align: center;
+            font-style: italic;
+            font-weight: bold;
+            text-decoration: underline;
+            font-size: 200%;
+            color: black;
+        }
+        #section{
+            width: 70%;
+            margin: auto;
+            text-align: left;
+            background-color: white;
+            border-radius: 20px;
+        }
+        #section h4{
+            padding: 2%;
+            text-align: left;
+            color: red;
+        }
+        #form{
+            padding: 0% 2%;
+            padding-bottom: 2%;
+            font-size: large;
+        }
+        #form input[type="text"], input[type="email"]{
+            display: block;
+            margin: 2%;
+            border:none;
+            border-bottom: 1px dotted black;
+            padding-right: 20px;
+            font-size: 20px;
+            outline:none;
+        }
+        .radio_checkbox{        
+            font-size: 20px;
+            padding: 2% 5%; 
+        }
+        #city{
+            margin-left: 20px;
+            font-size: 15px;
+        }
+        #form input[type="submit"]{
+            display: block;
+            margin: 2% 0%;
+            padding: 15px 30px;
+            border-radius: 10px;
+            background: none;
+            border: none;
+            background-color: rgb(166, 223, 250);
+        }
+        #form input[type="submit"]:hover{
+            background-color: rgb(97, 169, 202);
+        }
+        #vanish, #display{
+            display: block;
+            margin: 2% auto;
+            padding: 15px 30px;
+            border-radius: 10px;
+            background: none;
+            border: none;
+            background-color: rgb(250, 183, 166);
+        }
+        #popup{
+            background-color: #0de088;
+            padding: 2% 3%;
+            position:absolute;
+            top: 20px;
+            right: 20px;
+            display: none;
+        }
+    </style>
+    <script>
+        function Validate(){
+            var first_name=document.getElementById("first_name").value;
+            var middle_name=document.getElementById("middle_name").value;
+            var last_name=document.getElementById("last_name").value;
+            var contact_number=document.getElementById("contact_number").value;
+            var email=document.getElementById("email").value;
+            var gender_list=document.getElementsByClassName("gender");
+            var vehicle_list=document.getElementsByClassName("vehicle");
+            var city=document.getElementById("city").value;
+            for(i=0;i<gender_list.length;i++){
+                if(gender_list[i].checked){
+                    var gender=gender_list[i].value;
+                }
+            }
+            //console.log(gender);
+            for(i=0;i<vehicle_list.length;i++){
+                if(vehicle_list[i].checked){
+                    var vehicle=vehicle_list[i].value;
+                }
+                //console.log(vehicle);
+            }
+            //console.log(city);
+            if(first_name == "" || last_name == "" || contact_number == "" || email == "" || gender == undefined){
+                alert("Fill in madatory fields");
+                return false;
+            }
+            else{
+                return true;
+            }
+            //return false;
+        }
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div>
+            <h1>Enter your Personal Details</h1>
+        </div>
+    </header>
+    <div id="popup">
+        <h3>Welcome user_name</h3>
+    </div>
+    <section id="section">
+        <h4>*required fields</h4>
+        <form id="form" action="Thankyou_page.html">
+            <label>First Name<span class="star">*</span></label>
+            <input id="first_name" class="input" type="text" placeholder="Your first name">
+            <label>Middle Name</label>
+            <input id="middle_name" class="input" type="text" placeholder="Your middle name">
+            <label>Last Name<span class="star">*</span></label>
+            <input id="last_name" class="input" type="text" placeholder="Your last name">
+            <label>Contact number<span class="star">*</span></label>
+            <input id="contact_number" class="input" type="text" placeholder="Your contact number">
+            <label>Email<span class="star">*</span></label>
+            <input id="email" class="input" type="email" placeholder="Your email">
+            <label>Gender<span class="star">*</span></label>
+            <div class="radio_checkbox"> 
+                <input class="gender" name="gender" type="radio" value="Male"><label>Male</label>
+                <input class="gender" name="gender" type="radio" value="Female"><label>Female</label>
+                <input class="gender" name="gender" type="radio" value="Other"><label>Other</label>
+            </div>
+            <label>Vehicle</label>
+            <div class="radio_checkbox">
+                <input class="vehicle" type="checkbox" value="Two-Wheeler"><label>Two-Wheeler</label>
+                <input class="vehicle" type="checkbox" value="Four-Wheeler"><label>Four-Wheeler</label>
+            </div>
+            <label>City</label>
+            <select id="city">
+                <option value="Chennai">Chennai</option>
+                <option value="Coimbatore">Coimbatore</option>
+                <option value="Madurai">Madurai</option>
+                <option value="Salem">Salem</option>
+                <option value="Tiruchirapalli">Tiruchirapalli</option>
+                <option value="Tuticorin">Tuticorin</option>
+                <option value="Puducherry">Puducherry</option>
+            </select>
+            <input id="submit" type="submit" value="submit" onclick="return Validate()">
+        </form>
+    </section>
+
+    <script>
+        (function(){
+            var pop=document.getElementById("popup");
+            //console.log(pop);
+            pop.style.display="block";
+            setTimeout(()=>  pop.style.display="none",5000);
+          
+          })();          
+    </script>
+</body>
+</html>
